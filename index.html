@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome to Homepage!</h1>
+     <table class = "table">
+        <tr>
+            <td>
+                <h2 style="font-size:20px">Vaccine</h2>
+            </td>
+            <td>
+                <h2 style="font-size:20px">Place Distributed</h2>
+            </td>
+            <td colspan="1">
+                <h2 style="font-size:20px">Number of Doses Offered</h2>
+            </td>
+        </tr>
+        {% for property in vaccines %}
+        <tr>
+            <td>
+                {{ property[1] }}
+            </td>
+            <td>
+                {{ property[2] }}
+            </td>
+            <td>
+                {{ property[3] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
